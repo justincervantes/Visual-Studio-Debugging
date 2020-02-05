@@ -18,7 +18,7 @@ In debugging this file, we will perform the following actions:
 
 Steps and explanation: Set a breakpoint in Visual Studio by clicking on the grey margin beside the appropriate line. In Visual Studio, when a breakpoint is set up and the mode is set to debug, you can run the program Local Windows Debugger. You know a breakpoint is currently on when there is a red dot in the grey margin – the yellow cursor currently indicates where your program will be executing code next.
 
-![](Images/1)
+![](/Images/1)
 
 In this case, we observe that ListenSocket is an unsigned int with a value of 288.
 
