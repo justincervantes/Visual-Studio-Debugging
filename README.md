@@ -3,7 +3,7 @@ A short tutorial on investigating data values in Visual Studio. This guide takes
 
 To get started, open a Visual Studio windows console application, copy and paste the code, and run the program as explained in each instruction period.
 
-Disclaimer: I take absolutely no credit for the code samples. All sample code is credited to Aman Abdulla from the British Columbia Institute of Technology. Also, your machine's outputs may be different due to port number allocations and memory addresses, this is to be expected (please use this document as a reference for debugging and not an pure follow along guide).
+Disclaimer: I take absolutely no credit for the code samples. All sample code is credited to Aman Abdulla from the British Columbia Institute of Technology. Also, your machine's outputs may be different due to port number allocations and memory addresses, this is to be expected (please use this document as a reference for debugging and not a pure follow along guide).
 
 # Debugging callback.c
 
