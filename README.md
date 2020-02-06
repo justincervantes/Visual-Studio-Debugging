@@ -22,23 +22,28 @@ Steps and explanation: Set a breakpoint in Visual Studio by clicking on the grey
 
 In this case, we observe that ListenSocket is an unsigned int with a value of 288.
 
-![](Images/2)
+![](/Images/2.png)
 
 ## Put a breakpoint on line 107, run the client code and connect to the server. When the server program breaks, print out the value of AcceptSocket
 
 Steps and explanation: Apply a similar breakpoint to line 107. When you continue through your execution by pressing F5, the program stops and waits for a connection to proceed. When the tcp_clnt code is run, the debugger continues and reaches the breakpoint.
 The value of AcceptSocket is an unsigned integer of 208.
 
-![](Images/3)
+![](/Images/3.png)
 
 ## Put a breakpoint on line 179 and print out the value of DataBuf
 
 Steps and explanation: Put a breakpoint at line 179 and continue the debugger (F5). You will not automatically see the variable in your normal debugging pane, as the DataBuf is a _ WSABUF which exists in the local variable SocketInfo.
 
+![](/Images/4.png)
+![](/Images/5.png)
+
 ## Put a breakpoint on line 236, and print out the value of DataBuf
 
-![](Images/4)
-![](Images/5)
+Steps and explanation: Insert a final breakpoint at line 238. After pressing F5 to continue through to the final breakpoint, check the same local variable tab, but this time DataBuf will appear now under the SOCKET_INFORMATION *, SI. 
+
+![](/Images/6.png)
+
 
 
 # Debugging tcp_clnt.c
@@ -52,31 +57,32 @@ In debugging this file, we will perform the following actions:
 ## Put an initial breakpoint on line 94, run the program and when it breaks, display the value of sd
 
 Steps and explanation: As with callback, place your first breakpoint on line 94. When reading the code, you might notice that the code expects command line arguments else it kicks you out with a usage message.
+
 In order to set up command line arguments in Visual Studio debugger, right click on your project from the solution explorer pane.
 
-![](Images/6)
+![](/Images/7.png) ![](Images/8.png)
 
 In the properties menu, go to the debugging tab and select command line arguments. To run this particular program, enter your local IPv4 address (you can get this by entering ipconfig in CMD) and port 5150 as shown below:
 
-![](Images/7)
+![](/Images/9)
 
 Once the command line arguments are set, run the program as you did with the callback.c by making sure you’re in debugging mode and pressing Local Windows Debugger.
 
-![](Images/1)
+![](/Images/1.png)
 
 We see that sd is an unsigned int with a value of 288.
 
-![](Images/8)
+![](Images/10.png)
 
 ## Put a breakpoint on line 108, and display the contents of sd and sbuf
 
 Steps and explanation: Place a breakpoint at line 108 and press F5 to continue through. You’ll notice the debugger window will be waiting for input due to the fgets line on 105. Enter input, and the debugger will kick in and proceed to the next breakpoint.
 The sd and sbuf variables are shown as an unsigned int of 280 and and a char array of size 255 with the current contents of “Justin\n”.
 
-![](Images/9)
+![](/Images/11.png)
 
 ## Put a breakpoint on line 121 and print out the value of rbuf
 
 Steps and explanation: Place your final breakpoint at line 121 and press F5. We see that rbuf is a char array of size 255 with the contents of “Justin\n” which is expected as the server is an echo server.
 
-![](Images/10)
+![](/Images/12.png)
